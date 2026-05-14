@@ -1,0 +1,25 @@
+{
+  "name": "online-check-in-prototype-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev:engine-1": "pnpm --filter @va/simulator-engine-1 dev",
+    "dev:engine-2": "pnpm --filter @va/simulator-engine-2 dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm --filter @va/simulator-core typecheck && pnpm --filter @va/simulator-core build && pnpm --filter './apps/**' typecheck",
+    "test": "pnpm -r test",
+    "start:engine-1": "pnpm --filter @va/simulator-engine-1 start",
+    "start:engine-2": "pnpm --filter @va/simulator-engine-2 start"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "vitest": "latest"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}

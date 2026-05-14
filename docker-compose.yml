@@ -1,0 +1,22 @@
+services:
+  simulator-engine-1:
+    build:
+      context: .
+      args:
+        APP: engine-1
+    environment:
+      PORT: 7011
+      SIMULATION_INTERVAL_MS: 60000
+    ports:
+      - "7011:7011"
+
+  simulator-engine-2:
+    build:
+      context: .
+      args:
+        APP: engine-2
+    environment:
+      PORT: 7012
+      SIMULATION_INTERVAL_MS: 30000
+    ports:
+      - "7012:7012"
